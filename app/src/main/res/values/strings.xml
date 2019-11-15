@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Swivel</string>
 
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_content">Swivel Demo</string>
     <string name="title_activity_home">Home</string>
     <string name="title_headlines">Headlines</string>
     <string name="title_preferred">Preferred</string>

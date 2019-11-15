@@ -1,9 +1,9 @@
 package com.example.swivel.ui.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import com.example.swivel.R
 
 class FullscreenActivity : AppCompatActivity() {
@@ -23,6 +23,6 @@ class FullscreenActivity : AppCompatActivity() {
             val mainActivity = Intent(this, MainActivity::class.java)
             startActivity(mainActivity)
             finish()
-        }, 250)
+        }, 500)
     }
 }

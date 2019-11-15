@@ -1,12 +1,13 @@
 package com.example.swivel.ui.fragments.profile
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.example.swivel.R
 
-class ProfileFragment : PreferenceFragmentCompat() {
+class ProfileFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         addPreferencesFromResource(R.xml.preferences)
@@ -28,5 +29,21 @@ class ProfileFragment : PreferenceFragmentCompat() {
         } else {
             preference.summary = stringValue
         }
+    }
+
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences, key: String) {
+        findPreference<Preference>(key)?.let {
+            setPreferenceSummery(it, sharedPreferences.getString(it.key, "")!!)
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        preferenceScreen.sharedPreferences.registerOnSharedPreferenceChangeListener(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        preferenceScreen.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
     }
 }
