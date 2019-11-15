@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="country_labels">
+        <item>Canada</item>
+        <item>China</item>
+        <item>England</item>
+        <item>Russia</item>
+        <item>USA</item>
+    </string-array>
+
+    <string-array name="country_values">
+        <item>ca</item>
+        <item>cn</item>
+        <item>gb</item>
+        <item>ru</item>
+        <item>us</item>
+    </string-array>
+
+    <string-array name="keyword">
+        <item>bitcoin</item>
+        <item>apple</item>
+        <item>earthquake</item>
+        <item>animal</item>
+    </string-array>
+</resources>

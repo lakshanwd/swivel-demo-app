@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shared_preference_name">com.example.swivel_preferences</string>
+
+    <string name="prf_country">country</string>
+    <string name="prf_keyword">keyword</string>
+    <string name="prf_user">user</string>
+
+    <string name="default_country">us</string>
+    <string name="default_keyword">bitcoin</string>
+    <string name="default_user">default-user</string>
+
+    <string name="pref_name_title">Name</string>
+    <string name="pref_country_title">Country</string>
+    <string name="pref_keyword_title">Preferred Keyword</string>
+</resources>
