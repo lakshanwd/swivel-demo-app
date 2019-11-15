@@ -1,8 +1,10 @@
 package com.example.swivel.ui.fragments.headline
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.swivel.BuildConfig
 import com.example.swivel.dao.Article
 import com.example.swivel.dao.SuccessResult
 import com.example.swivel.net.RestFulWebService
@@ -30,7 +32,11 @@ class HeadLinesViewModel : ViewModel() {
         RestFulWebService.getWebService().getTopHeadlines(country = mCountry).enqueue(object : Callback<SuccessResult> {
 
             override fun onFailure(call: Call<SuccessResult>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                if (BuildConfig.DEBUG) {
+                    Log.e("headlines-vm", t.message, t)
+                } else {
+                    //todo: Report with fabric crashlytics
+                }
             }
 
             override fun onResponse(call: Call<SuccessResult>, response: Response<SuccessResult>) {
